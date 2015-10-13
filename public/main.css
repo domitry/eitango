@@ -189,3 +189,16 @@ a{
     display: none;
     text-align: center;
 }
+
+#statistics > svg{
+    width: 100%;
+    height: 300px;
+}
+
+#statistics_table{
+    border: solid 1px black;
+}
+
+#statistics_table > tbody > tr > td{
+    padding: 3px;
+}

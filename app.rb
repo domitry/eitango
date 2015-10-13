@@ -129,6 +129,13 @@ module Eitango
         }}
     end
 
+    get '/statistics' do
+      authorize_required
+      erb :statistics, {locals: {
+          json: get_session_json
+        }}
+    end
+
     get '/begin_authorize.json' do
       rtoken = get_consumer.get_request_token
       session[:oauth_token] = rtoken.token
