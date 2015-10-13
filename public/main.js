@@ -84,7 +84,8 @@ window.onload = function(){
                     d3.json("/begin_authorize.json", function(err, json){
                         d3.select("#dialog")
                             .select("a")
-                            .attr("href", json.url);
+                            .attr("href", json.url)
+                            .text(json.url);
                     });
                 });
 
