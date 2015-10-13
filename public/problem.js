@@ -50,6 +50,7 @@ window.onload = function(){
                 d3.select("#problem_text").text(text);
                 d3.select("#problem_word").text(word);
                 results.push({
+                    problem: word,
                     type: val,
                     answer: answer,
                     word: content.word
@@ -62,7 +63,8 @@ window.onload = function(){
                         correct: (row.answer == row.value),
                         answer: row.answer,
                         value: row.value,
-                        word: row.word
+                        word: row.word,
+                        problem: row.problem
                     };
                 });
 
@@ -71,6 +73,7 @@ window.onload = function(){
                 }, 0);
 
                 d3.select("#problem").style("display", "none");
+                d3.select("#score").style("display", "block");
 
                 d3.select("score")
                     .append("div")
@@ -78,12 +81,14 @@ window.onload = function(){
                     .text(score + "/" + num);
 
                 var tb = d3.select("#score")
-                        .append("table");
+                        .append("table")
+                        .attr("id", "result_table");
 
                 var tr = tb.append("tr");
-                tr.append("td").text("O/X");
-                tr.append("td").text("your answer");
-                tr.append("td").text("correct answer");
+                tr.append("th").text("O/X");
+                tr.append("th").text("problem");
+                tr.append("th").text("your answer");
+                tr.append("th").text("correct answer");
 
                 tr = tb
                     .selectAll("tr")
@@ -93,6 +98,9 @@ window.onload = function(){
 
                 tr.append("td")
                     .text(function(d){return (d.correct ? "O" : "X");});
+
+                tr.append("td")
+                    .text(function(d){return d.problem;});
 
                 tr.append("td")
                     .text(function(d){return d.value;});

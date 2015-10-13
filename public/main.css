@@ -173,3 +173,19 @@ button{
 a{
     color: black;
 }
+
+#result_table{
+    margin: 30 auto;
+    width: 80%;
+    border: solid 2px black;
+}
+
+#result_table > tr > td{
+    text-align: center;
+    padding: 0.1em;
+}
+
+#score{
+    display: none;
+    text-align: center;
+}
