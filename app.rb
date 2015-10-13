@@ -196,7 +196,10 @@ module Eitango
       solved = params[:solved]
       unsolved = params[:unsolved]
       db.srem(key_user_set_unfinished, solved) if solved.length > 0
-      db.srem(key_user_set_all, solved+unsolved) unless params[:global].nil?
+      unless params[:global].nil?
+        db.sadd(key_user_set_all, solved+unsolved) 
+        db.sadd(key_user_set_unfinished, unsolved)
+      end
       status 200
     end
     
