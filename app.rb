@@ -197,7 +197,7 @@ module Eitango
       unsolved = params[:unsolved]
       db.srem(key_user_set_unfinished, solved) if solved.length > 0
       db.srem(key_user_set_all, solved+unsolved) unless params[:global].nil?
-      200
+      status 200
     end
     
     post '/register' do
@@ -211,7 +211,7 @@ module Eitango
       db.sadd(key_user_set_all, word)
       db.sadd(key_user_set_unfinished, word)
       db.sadd(key_global_set, word)
-      200
+      status 200
     end
   end
 end
