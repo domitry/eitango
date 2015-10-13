@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link href="main.css" rel="stylesheet", type="text/css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+    <script>
+      window.session_info = <%= json %>;
+    </script>
+    <script src="main.js"></script>
+    <script src="common.js"></script>
+  </head>
+  <body>
+    <div id="whole_wrapper">
+      <div id="bar_wrapper">
+        <div id="user_area">
+          <div id="user_icon"><img src="" width="36px" height="36px"></div>
+          <div id="logout"><h3>LOGOUT</h3></div>
+        </div>
+        <div id="login_area">
+          <div id="h2wrapper">
+            <img src="https://g.twimg.com/dev/sites/default/files/images_documentation/sign-in-with-twitter-gray.png" id="twitter_button">
+          </div>
+        </div>
+      </div>
+      <div id="contents_wrapper">
+        <div id="svg_wrapper">
+          <img src="logo.png" id="logo"><br>
+          <svg></svg>
+        </div>
+      </div>
+    </div>
+    <div id="dialog_area">
+      <div id="dialog_wrapper">
+        <div id="dialog">
+          <h2>Login with Twitter</h2>
+          <a href="hoge.html" target="_blank"><h2>Click me</h2></a>
+          <form>
+            <input type="text" placeholder=".. then input PIN here.">
+            <button>Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,157 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#bar_wrapper{
+    height: 50px; /*must be deleted*/
+    width: 100%;
+    position: relative;
+    background-color: #222447;
+    color: white;
+}
+
+#whole_wrapper{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #F0F7EB;
+}
+
+#user_area{
+    display: none;
+    height: 100%;
+    position: absolute;
+    right: 0px;
+    border-collapse: separate;
+    border-spacing: 20px 1px;
+}
+
+#login_area{
+    display: none;
+    height: 100%;
+    position: absolute;
+    right: 0px;
+}
+
+#h2wrapper{
+    display:table-cell;
+    vertical-align: middle;
+    padding-right: 10px;
+}
+
+#login_area > h2{
+    display: inline;
+    text-align: center;
+}
+
+#user_icon{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#logout{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#contents_wrapper{
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+#svg_wrapper{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+svg{
+    /*display: block;*/
+}
+
+#logo{
+    margin-bottom: 50px;
+}
+
+#dialog_area{
+    display: none;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#dialog_wrapper{
+    vertical-align: middle;
+    text-align: center;
+    display: table-cell;
+}
+
+#dialog > h2{
+    margin: 50 auto;
+    margin-bottom: 70;
+    font-size: 2em;
+}
+
+form{
+    padding: 5px;
+}
+
+input, button, textarea{
+    display: inline;
+    padding: 2 10;
+    font-size: 1.5em;
+    margin-top: 25;
+    margin-bottom: 25;
+}
+
+button{
+}
+
+#dialog{
+    width: 460px;
+    background-color: white;
+    margin: 0 auto;
+    padding: 40px;
+    border: solid 3px #000;
+}
+
+#contents{
+    min-width: 400px;
+    max-width: 700px;
+    height: 1500px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 50px;
+}
+
+#problem_num{
+    text-align: right;
+}
+
+#problem_text, #problem_word, problem_form{
+    margin: 30 0;
+    text-align: center;
+}
+
+#problem_form > form > input{
+    display: block;
+    margin: 0 auto;
+}
+
+#next_button > img{
+    display: block;
+    margin: 30 auto;
+    cursor: pointer;
+}
+
+.red{
+    color: #ff0000
+}
+
+.register_table{
+    vertical-align: middle;
+}

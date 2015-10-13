@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    
+    <link href="main.css" rel="stylesheet", type="text/css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+    <script>
+      window.session_info = <%= json %>;
+      window.problem_type = <%= "\"" + type + "\"" %>;
+    </script>
+    <script src="common.js"></script>
+    <script src="problem.js"></script>
+  </head>
+  <body>
+    <div id="whole_wrapper">
+      <div id="bar_wrapper">
+        <div id="user_area">
+          <div id="user_icon"><img src="" width="36px" height="36px"></div>
+          <div id="logout"><h3>LOGOUT</h3></div>
+        </div>
+      </div>
+      <div id="contents_wrapper">
+        <div id="contents">
+          <div id="score">
+          </div>
+          <div id="problem">
+            <div id="problem_num">1/10</div>
+            <div id="problem_text">日本語を英語に訳しなさい。</div>
+            <div id="problem_word"><h1>Poyo</h1></div>
+            <div id="problem_form">
+              <form>
+                <input type="text" id="answer">
+              </form>
+            </div>
+          </div>
+          <div id="next_button">
+            <img src="next_button.png" width="200px" height="200px" title="next">
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
