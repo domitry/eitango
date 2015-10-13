@@ -68,8 +68,11 @@ module Eitango
       end
 
       def words_json(words)
-        jps = db.mget(*(words.map{|word| key_japanese(word)}))
-        exps = db.mget(*(words.map{|word| key_examples(word)}))
+        jps =[]; exps=[];
+        unless(words.length==0)
+          jps = db.mget(*(words.map{|word| key_japanese(word)}))
+          exps = db.mget(*(words.map{|word| key_examples(word)}))
+        end
         {
           num: jps.length,
           contents: words.map.with_index {|word, i|
