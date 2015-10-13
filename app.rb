@@ -192,7 +192,6 @@ module Eitango
       json_to_params(request.body.read)
       parameter_required :solved, :unsolved
 
-      print params
       solved = params[:solved]
       unsolved = params[:unsolved]
       db.srem(key_user_set_unfinished, solved) if solved.length > 0
