@@ -63,6 +63,10 @@
     top: 0px;
 }
 
+#description{
+    min-height: 2em;
+}
+
 #svg_wrapper{
     display: table-cell;
     vertical-align: middle;

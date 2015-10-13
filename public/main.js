@@ -12,9 +12,9 @@ window.onload = function(){
         });
 
         var data = [
-            {name: "自主練", link: "user_problem", i: 0},
-            {name: "大会", link: "global_problem", i: 1},
-            {name: "単語を登録", link: "register_word", i: 2}
+            {name: "自主練", link: "user_problem", i: 0, description: "自分で登録した単語をテストする."},
+            {name: "大会", link: "global_problem", i: 1, description: "他の人が登録した単語をテストする."},
+            {name: "単語を登録", link: "register_word", i: 2, description: "新しい単語を追加する."}
         ];
 
        var gs = svg
@@ -34,17 +34,23 @@ window.onload = function(){
                 "stroke-width": 3
             })
             .style("cursor", "pointer")
-            .on("mouseover", function(){
+            .on("mouseover", function(d){
                 d3.select(this)
                     .transition()
                     .duration(100)
                     .attr("r", 1.1*(rad/2));
+
+                d3.select("#description")
+                    .text(d.description);
             })
             .on("mouseout", function(){
                 d3.select(this)
                     .transition()
                     .duration(100)
                     .attr("r", rad/2);
+
+                d3.select("#description")
+                    .text(" ");
             })
             .on("click", function(d){
                 window.location = "/" + d.link;
@@ -64,7 +70,9 @@ window.onload = function(){
 
         if(session_info.login){
             initialize_user(session_info.image_url);
+            d3.select("#description").text(" ");
         }else{
+            d3.select("svg").style("display", "none");
             d3.select("#login_area").style("display", "table");
 
             d3.select("#twitter_button")
@@ -88,6 +96,9 @@ window.onload = function(){
                     d3.json("/complete_authorize.json?pin=" + pin, function(err, json){
                         d3.select("#login_area").style("display", "none");
                         d3.select("#dialog_area").style("display", "none");
+                        d3.select("svg").style("display", "inline");
+                        d3.select("#description").text("");
+                        
                         initialize_user(json.image_url);
                     });
                 });
