@@ -94,13 +94,17 @@ window.onload = function(){
                     d3.event.preventDefault();
                     
                     d3.json("/complete_authorize.json?pin=" + pin, function(err, json){
+                        d3.select("input").attr("disabled", null);
+                        d3.select("button").attr("disabled", null);
                         d3.select("#login_area").style("display", "none");
                         d3.select("#dialog_area").style("display", "none");
                         d3.select("svg").style("display", "inline");
                         d3.select("#description").text("");
-                        
                         initialize_user(json.image_url);
                     });
+
+                    d3.select("input").attr("disabled", "disabled");
+                    d3.select("button").attr("disabled", "disabled");
                 });
         }
     })(window.session_info);
