@@ -159,3 +159,15 @@ button{
 .register_table{
     vertical-align: middle;
 }
+
+#footer{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    z-index: 15;
+}
+
+a{
+    color: black;
+}
