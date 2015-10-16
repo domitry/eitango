@@ -2,7 +2,6 @@
 
 ![](https://raw.githubusercontent.com/domitry/eitango/master/public/logo.png)
 
-The webapp for improving vocaburaly
 Try on [eigo.domitry.com](http://eigo.domitry.com) with your twitter account!
 
 ## Screenshots
